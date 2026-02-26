@@ -4,434 +4,388 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anusha S — Content Strategist & GTM Writer</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #3b342c;
+    --ink: #1e1a14;
     --paper: #faf7f2;
-    --accent: #a0845c;
-    --accent-light: #c9a97a;
-    --muted: #9e9188;
+    --accent: #8a6e3e;
+    --accent-light: #b8904a;
+    --muted: #5c5248;
     --rule: #e8e0d5;
     --card: #fdf9f5;
+    --sand: #f0e9df;
+    --tan: #e8dfd3;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.7;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.7; }
 
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 4rem;
-    background: var(--paper);
+    padding: 1rem 3rem;
+    background: rgba(250,247,242,0.95);
+    backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--rule);
   }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--muted); text-decoration: none;
-    transition: color .2s;
-  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+  .nav-links a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
   .nav-links a:hover { color: var(--accent); }
 
   /* ── HERO ── */
   #hero {
-    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 72px;
+    padding-top: 64px;
+    overflow: hidden;
   }
   .hero-left {
     display: flex; flex-direction: column; justify-content: center;
-    padding: 6rem 4rem 6rem 4rem;
+    padding: 3rem 4rem;
     border-right: 1px solid var(--rule);
+    position: relative;
   }
-  .hero-eyebrow {
-    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
+  /* decorative corner lines */
+  .hero-left::before {
+    content: '';
+    position: absolute; top: 3rem; left: 3rem;
+    width: 60px; height: 60px;
+    border-top: 2px solid var(--accent-light);
+    border-left: 2px solid var(--accent-light);
+    opacity: 0.5;
   }
-  .hero-name {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 5vw, 5.5rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
+  .hero-left::after {
+    content: '';
+    position: absolute; bottom: 3rem; right: 0;
+    width: 40px; height: 40px;
+    border-bottom: 2px solid var(--accent-light);
+    border-right: 2px solid var(--accent-light);
+    opacity: 0.3;
   }
-  .hero-title {
-    font-size: 1rem; color: var(--muted); max-width: 420px;
-    margin-bottom: 3rem; line-height: 1.8;
-  }
-  .hero-cta {
-    display: inline-flex; align-items: center; gap: 0.75rem;
-    background: var(--accent); color: #fff; padding: 0.85rem 1.75rem;
-    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
-    text-transform: uppercase; text-decoration: none;
-    transition: background .2s;
-  }
-  .hero-cta:hover { background: #8a6e48; }
+  .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 4.5vw, 5rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+  .hero-title { font-size: 0.95rem; color: var(--muted); max-width: 400px; margin-bottom: 1.75rem; line-height: 1.8; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--accent); color: #fff; padding: 0.85rem 1.75rem; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background .2s; }
+  .hero-cta:hover { background: #6e5530; }
+  .hero-cta-outline { display: inline-flex; align-items: center; gap: 0.6rem; background: transparent; color: var(--ink); padding: 0.85rem 1.75rem; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background .2s, color .2s; border: 1.5px solid var(--rule); }
+  .hero-cta-outline:hover { background: var(--tan); border-color: var(--accent-light); }
+  .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
   .hero-right {
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 4rem;
-    background: #f0e9df;
+    background: var(--sand);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 3rem;
+    position: relative; overflow: hidden;
   }
-  .hero-stat-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
-    margin-bottom: 3rem;
-  }
-  .hero-stat {
-    background: #e8dfd3; padding: 2rem 1.5rem;
-  }
-  .hero-stat-num {
+  /* big decorative quote mark */
+  .hero-right::before {
+    content: '"';
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem; color: var(--accent);
-    line-height: 1; margin-bottom: 0.4rem;
+    font-size: 20rem;
+    color: var(--tan);
+    position: absolute;
+    top: -3rem; right: -1rem;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
   }
-  .hero-stat-label {
-    font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  .hero-tagline {
-    font-family: 'Playfair Display', serif; font-style: italic;
-    font-size: 1.1rem; color: var(--ink); line-height: 1.6;
-    border-top: 1px solid #d5c9bc; padding-top: 2rem;
-  }
+  .hero-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+  .hero-stat { background: var(--tan); padding: 1.25rem; }
+  .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem; font-weight: 700; }
+  .hero-stat-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+  .hero-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: var(--ink); line-height: 1.7; border-top: 1px solid #d5c9bc; padding-top: 1.25rem; position: relative; z-index: 1; }
 
   /* ── SECTION BASE ── */
-  section { padding: 6rem 4rem; }
-  .section-header {
-    display: flex; align-items: baseline; gap: 1.5rem;
-    margin-bottom: 4rem; border-bottom: 1px solid var(--rule);
-    padding-bottom: 1.5rem;
-  }
-  .section-num {
-    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--accent); font-weight: 500;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif; font-size: 2.5rem;
-    letter-spacing: -0.02em;
-  }
+  section { padding: 3.5rem 4rem; }
+  .section-header { display: flex; align-items: baseline; gap: 1.25rem; margin-bottom: 2rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
+  .section-num { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 500; white-space: nowrap; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: -0.02em; }
 
   /* ── WORK SAMPLES ── */
   #work { background: var(--card); }
-  .work-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
-    background: var(--rule);
-  }
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--rule); }
   .work-card {
-    background: var(--card); padding: 2.5rem;
-    transition: background .2s;
+    background: var(--card); padding: 1.5rem;
+    transition: background .2s, transform .2s;
     text-decoration: none; color: inherit;
-    display: block;
+    display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
   }
-  .work-card:hover { background: #f0ece4; }
-  .work-type {
-    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--accent);
-    margin-bottom: 1rem;
+  .work-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    height: 3px; width: 0; background: var(--accent);
+    transition: width .3s ease;
   }
-  .work-title {
-    font-family: 'Playfair Display', serif; font-size: 1.3rem;
-    line-height: 1.3; margin-bottom: 1rem;
+  .work-card:hover::after { width: 100%; }
+  .work-card:hover { background: #f7f2eb; }
+  .work-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.25rem; margin-bottom: 1.25rem;
+    background: var(--sand);
+    flex-shrink: 0;
   }
-  .work-desc {
-    font-size: 0.88rem; color: var(--muted); line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-  .work-link-text {
-    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--accent);
-    border-bottom: 1px solid var(--accent-light); display: inline-block;
-    padding-bottom: 2px;
-  }
-  .work-achievements {
-    display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;
-  }
-  .achievement-badge {
-    display: inline-flex; align-items: center; gap: 0.35rem;
-    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.05em;
-    padding: 0.3rem 0.7rem; border-radius: 2px;
-  }
-  .badge-seo {
-    background: #fdf3e3; color: #a07030;
-    border: 1px solid #e8cfa0;
-  }
-  .badge-aeo {
-    background: #eef4fd; color: #3a70b0;
-    border: 1px solid #b0cce8;
-  }
-
-  .work-tag {
-    display: inline-block; font-size: 0.7rem; padding: 0.2rem 0.6rem;
-    background: #ede4d8; color: var(--accent); margin-bottom: 1rem;
-    border-radius: 2px; font-weight: 500;
-  }
+  .work-type { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+  .work-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; line-height: 1.35; margin-bottom: 0.75rem; }
+  .work-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; flex: 1; }
+  .work-link-text { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 0.4rem; }
+  .work-achievements { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem; }
+  .achievement-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.25rem 0.6rem; border-radius: 20px; }
+  .badge-seo { background: #fdf3e3; color: #a07030; border: 1px solid #e8cfa0; }
+  .badge-aeo { background: #eef4fd; color: #3a70b0; border: 1px solid #b0cce8; }
+  .work-tag { display: inline-block; font-size: 0.68rem; padding: 0.2rem 0.55rem; background: #ede4d8; color: var(--accent); margin-bottom: 0.75rem; border-radius: 20px; font-weight: 500; }
 
   /* ── IMPACT ── */
-  #impact { background: #f5efe6; }
-  .impact-intro {
-    font-size: 1rem; color: var(--muted); max-width: 620px;
-    margin-bottom: 3.5rem; line-height: 1.8;
-  }
+  #impact { background: var(--sand); }
   .impact-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
-    background: var(--rule); margin-bottom: 3rem;
+    background: var(--rule); margin-bottom: 1.5px;
   }
   .impact-card {
-    background: #fdf9f5; padding: 2.5rem 2rem;
+    background: var(--card); padding: 1.75rem 1.5rem;
+    display: flex; flex-direction: column;
   }
-  .impact-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem; color: var(--accent);
-    line-height: 1; margin-bottom: 0.5rem;
-  }
-  .impact-label {
-    font-size: 0.85rem; font-weight: 500; color: var(--ink);
-    margin-bottom: 0.5rem;
-  }
-  .impact-detail {
-    font-size: 0.8rem; color: var(--muted); line-height: 1.6;
-  }
+  .impact-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .impact-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--ink); line-height: 1; margin-bottom: 0.3rem; font-weight: 700; }
+  .impact-label { font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+  .impact-detail { font-size: 0.81rem; color: var(--muted); line-height: 1.6; flex: 1; }
   .impact-story {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5px;
     background: var(--rule);
   }
   .impact-story-card {
-    background: #fdf9f5; padding: 2rem;
+    background: var(--card); padding: 2.25rem;
+    display: flex; gap: 1.25rem; align-items: flex-start;
   }
-  .impact-story-label {
-    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
+  .impact-story-graphic {
+    flex-shrink: 0;
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--sand);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
   }
-  .impact-story-text {
-    font-size: 0.88rem; color: var(--ink); line-height: 1.7;
-  }
-  .impact-story-text strong { color: var(--accent); font-weight: 500; }
+  .impact-story-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .impact-story-text { font-size: 0.84rem; color: var(--ink); line-height: 1.7; }
+  .impact-story-text strong { color: var(--accent); font-weight: 600; }
 
   /* ── SPECIALISMS ── */
   #specialisms { background: var(--paper); }
-  .spec-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px;
-    background: var(--rule);
-  }
-  .spec-card {
-    background: var(--paper); padding: 2.5rem 2rem;
-  }
-  .spec-icon {
-    font-size: 1.8rem; margin-bottom: 1rem;
-  }
-  .spec-name {
-    font-family: 'Playfair Display', serif; font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-  }
-  .spec-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+  .spec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; background: var(--rule); }
+  .spec-card { background: var(--paper); padding: 2.25rem 1.75rem; position: relative; }
+  .spec-svg { margin-bottom: 1.25rem; }
+  .spec-name { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 0.6rem; }
+  .spec-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
 
   /* ── EXPERIENCE ── */
-  #experience { background: #f0e9df; color: var(--ink); }
-  #experience .section-title { color: var(--ink); }
-  #experience .section-num { color: var(--accent); }
-  #experience .section-header { border-color: #d5c9bc; }
-
-  .exp-timeline { display: flex; flex-direction: column; gap: 0; }
-  .exp-item {
-    display: grid; grid-template-columns: 200px 1fr;
-    border-top: 1px solid #d5c9bc; padding: 2.5rem 0;
-    gap: 3rem;
-  }
-  .exp-year {
-    font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted); padding-top: 0.2rem;
-  }
-  .exp-role {
-    font-family: 'Playfair Display', serif; font-size: 1.2rem;
-    margin-bottom: 0.25rem; color: var(--ink);
-  }
-  .exp-company { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.8rem; }
+  #experience { background: var(--sand); }
+  .exp-timeline { display: flex; flex-direction: column; }
+  .exp-item { display: grid; grid-template-columns: 180px auto 1fr; border-top: 1px solid #d5c9bc; padding: 1.5rem 0; gap: 2rem; align-items: start; }
+  .exp-year { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 0.25rem; }
+  .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 0.4rem; }
+  .exp-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .exp-line { width: 1px; flex: 1; background: var(--rule); margin-top: 6px; }
+  .exp-role { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.2rem; color: var(--ink); }
+  .exp-company { font-size: 0.82rem; color: var(--accent); margin-bottom: 0.75rem; font-weight: 500; }
   .exp-bullets { list-style: none; }
-  .exp-bullets li {
-    font-size: 0.88rem; color: var(--muted); padding: 0.3rem 0;
-    padding-left: 1.2rem; position: relative;
-  }
-  .exp-bullets li::before {
-    content: '→'; position: absolute; left: 0; color: var(--accent-light);
-  }
+  .exp-bullets li { font-size: 0.84rem; color: var(--muted); padding: 0.25rem 0 0.25rem 1rem; position: relative; line-height: 1.6; }
+  .exp-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--accent-light); }
 
   /* ── SKILLS ── */
   #skills { background: var(--paper); }
-  .skills-container {
-    display: grid; grid-template-columns: 2fr 1fr; gap: 4rem;
+  .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: var(--rule); }
+  .skills-panel { background: var(--card); padding: 2rem; }
+  .skills-panel-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem; }
+  .skills-panel-title span { font-size: 1.25rem; }
+  .skill-category { margin-bottom: 1.25rem; }
+  .skill-cat-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .skill-tag { font-size: 0.78rem; padding: 0.35rem 0.8rem; border: 1px solid var(--rule); color: var(--ink); border-radius: 20px; }
+  .tools-visual { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; background: var(--rule); }
+  .tool-tile {
+    background: var(--card); padding: 1.5rem 1rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.5rem; text-align: center;
   }
-  .skills-category { margin-bottom: 2.5rem; }
-  .skills-cat-label {
-    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;
+  .tool-emoji { font-size: 1.5rem; }
+  .tool-name { font-size: 0.72rem; color: var(--muted); font-weight: 500; letter-spacing: 0.03em; }
+
+  /* ── RECOMMENDATIONS ── */
+  #recommendations { background: var(--tan); }
+  .rec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5px; background: var(--rule); }
+  .rec-card { background: var(--card); padding: 2rem; }
+  .rec-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .rec-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 1.25rem;
+    color: #fff; flex-shrink: 0;
   }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .skill-tag {
-    font-size: 0.8rem; padding: 0.4rem 0.9rem;
-    border: 1px solid var(--rule); color: var(--ink);
-    letter-spacing: 0.03em;
-  }
-  .tools-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
-  }
-  .tool-item {
-    background: var(--card); padding: 0.9rem 1rem;
-    font-size: 0.83rem; color: var(--ink);
+  .rec-avatar-ag { background: linear-gradient(135deg, #a0845c, #c9a97a); }
+  .rec-avatar-ns { background: linear-gradient(135deg, #7a9c8e, #5a7d72); }
+  .rec-author-info { flex: 1; }
+  .rec-name { font-weight: 600; font-size: 0.95rem; color: var(--ink); }
+  .rec-role { font-size: 0.76rem; color: var(--muted); line-height: 1.5; margin-top: 0.1rem; }
+  .rec-date-badge { font-size: 0.68rem; padding: 0.2rem 0.6rem; background: var(--sand); color: var(--accent); border-radius: 20px; font-weight: 500; white-space: nowrap; }
+  .rec-stars { color: var(--accent-light); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem; }
+  .rec-pullquote {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1rem; color: var(--accent);
     border-left: 3px solid var(--accent-light);
+    padding-left: 1rem; margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+  .rec-body { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
+  .rec-linkedin-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 1.25rem; font-size: 0.72rem; color: #0a66c2; font-weight: 500;
+    padding: 0.3rem 0.75rem; background: #e8f0fb; border-radius: 20px;
   }
 
   /* ── CONTACT ── */
-  #contact {
-    background: #e8dfd3; color: var(--ink);
-    text-align: center; padding: 7rem 4rem;
+  #contact { background: var(--ink); color: #faf7f2; text-align: center; padding: 4rem 4rem; position: relative; overflow: hidden; }
+  #contact::before {
+    content: '';
+    position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+    width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(160,132,92,0.15) 0%, transparent 70%);
+    pointer-events: none;
   }
-  #contact .section-num { color: var(--accent); }
-  #contact .section-title { color: var(--ink); font-size: 3rem; }
-  #contact .section-header { border-color: #d0c4b5; justify-content: center; }
-  .contact-sub {
-    font-size: 1rem; color: var(--muted); margin-bottom: 3rem;
-  }
-  .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
-  .contact-link {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    background: #faf7f2; padding: 1rem 2rem;
-    color: var(--ink); text-decoration: none; font-size: 0.88rem;
-    font-weight: 500; letter-spacing: 0.05em;
-    border: 1px solid #d0c4b5;
-    transition: background .2s;
-  }
-  .contact-link:hover { background: #fff; }
+  #contact .section-num { color: var(--accent-light); }
+  #contact .section-title { color: #faf7f2; font-size: 2.5rem; }
+  #contact .section-header { border-color: rgba(255,255,255,0.1); justify-content: center; }
+  .contact-sub { font-size: 0.95rem; color: rgba(255,255,255,0.55); margin-bottom: 3rem; max-width: 480px; margin-left: auto; margin-right: auto; margin-bottom: 3rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1px; flex-wrap: wrap; background: rgba(255,255,255,0.08); display: inline-flex; border-radius: 4px; overflow: hidden; }
+  .contact-link { display: inline-flex; align-items: center; gap: 0.6rem; background: transparent; padding: 1.1rem 2.25rem; color: #faf7f2; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: background .2s; border: none; }
+  .contact-link:first-child { border-right: 1px solid rgba(255,255,255,0.1); }
+  .contact-link:hover { background: rgba(255,255,255,0.08); }
+  .contact-link-icon { font-size: 1.1rem; }
 
   /* ── FOOTER ── */
-  footer {
-    background: #e0d8cf; color: var(--muted);
-    text-align: center; padding: 2rem;
-    font-size: 0.78rem; letter-spacing: 0.05em;
-  }
+  footer { background: #2c271f; color: #6b6157; text-align: center; padding: 1.75rem; font-size: 0.75rem; letter-spacing: 0.06em; }
 
   /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .hero-eyebrow { animation: fadeUp .6s ease both; }
   .hero-name    { animation: fadeUp .7s .1s ease both; }
   .hero-title   { animation: fadeUp .7s .2s ease both; }
-  .hero-cta     { animation: fadeUp .7s .3s ease both; }
-  .hero-stat-grid { animation: fadeUp .8s .4s ease both; }
+  .hero-btns     { animation: fadeUp .7s .3s ease both; }
+  .hero-stat-grid { animation: fadeUp .8s .35s ease both; }
+  .hero-tagline { animation: fadeUp .8s .5s ease both; }
 
-  /* ── RESPONSIVE — TABLET ── */
+  /* ── HAMBURGER NAV ── */
+  .nav-hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: pointer; padding: 4px; background: none; border: none;
+  }
+  .nav-hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--ink); border-radius: 2px;
+    transition: all .25s;
+  }
+  .nav-mobile-menu {
+    display: none; position: fixed; top: 48px; left: 0; right: 0;
+    background: rgba(250,247,242,0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 1rem 1.5rem 1.5rem;
+    z-index: 99; flex-direction: column; gap: 0;
+  }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a {
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink); text-decoration: none;
+    padding: 0.75rem 0; border-bottom: 1px solid var(--rule);
+  }
+  .nav-mobile-menu a:last-child { border-bottom: none; }
+
+  /* ── RESPONSIVE TABLET ── */
   @media (max-width: 1024px) {
     .work-grid { grid-template-columns: repeat(2, 1fr); }
     .spec-grid { grid-template-columns: repeat(2, 1fr); }
-    .skills-container { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-left { padding: 5rem 3rem; }
-    .hero-right { padding: 3rem; }
+    .skills-layout { grid-template-columns: 1fr; }
+    .tools-visual { grid-template-columns: repeat(4, 1fr); }
   }
 
-  /* ── RESPONSIVE — MOBILE ── */
+  /* ── RESPONSIVE MOBILE ── */
   @media (max-width: 700px) {
-    /* Nav */
-    nav { padding: 0.9rem 1.25rem; }
-    .nav-links { gap: 1rem; }
-    .nav-links a { font-size: 0.72rem; letter-spacing: 0.06em; }
+    /* Nav — hide links, show hamburger */
+    nav { padding: 0.85rem 1.25rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
 
-    /* Hero — stack vertically, show stats below */
-    #hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-      padding-top: 60px;
-    }
-    .hero-left {
-      padding: 3rem 1.25rem 2.5rem;
-      border-right: none;
-      border-bottom: 1px solid var(--rule);
-    }
-    .hero-name { font-size: 2.8rem; }
-    .hero-title { font-size: 0.95rem; margin-bottom: 2rem; }
-    .hero-cta { font-size: 0.8rem; padding: 0.75rem 1.4rem; align-self: flex-start; }
-
-    /* Show hero-right on mobile as a slim stats strip */
-    .hero-right {
-      display: block;
-      padding: 1.75rem 1.25rem;
-      background: #f0e9df;
-    }
-    .hero-stat-grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-      margin-bottom: 0;
-    }
-    .hero-stat { padding: 1rem 0.6rem; }
-    .hero-stat-num { font-size: 1.6rem; }
+    /* Hero */
+    #hero { grid-template-columns: 1fr; padding-top: 48px; }
+    .hero-left { padding: 2.25rem 1.25rem 1.75rem; border-right: none; border-bottom: 1px solid var(--rule); }
+    .hero-left::before, .hero-left::after { display: none; }
+    .hero-title { font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .hero-btns { flex-direction: column; gap: 0.6rem; }
+    .hero-cta, .hero-cta-outline { justify-content: center; text-align: center; font-size: 0.8rem; padding: 0.8rem 1.25rem; }
+    .hero-right { padding: 1.25rem; }
+    .hero-right::before { font-size: 8rem; opacity: 0.4; }
+    .hero-stat-grid { grid-template-columns: repeat(2, 1fr); gap: 3px; margin-bottom: 1rem; }
+    .hero-stat { padding: 1rem; }
+    .hero-stat-num { font-size: 1.8rem; }
     .hero-stat-label { font-size: 0.62rem; }
-    .hero-tagline { display: none; }
+    .hero-tagline { font-size: 0.85rem; padding-top: 1rem; }
 
     /* Sections */
-    section { padding: 3rem 1.25rem; }
-    .section-header { margin-bottom: 2.5rem; flex-wrap: wrap; gap: 0.5rem; }
-    .section-title { font-size: 1.9rem; }
+    section { padding: 2.5rem 1.25rem; }
+    .section-header { margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.4rem; }
+    .section-title { font-size: 1.6rem; }
 
-    /* Work grid — single column */
-    .work-grid { grid-template-columns: 1fr; gap: 0; }
-    .work-card { padding: 1.75rem 1.25rem; }
-    .work-title { font-size: 1.15rem; }
+    /* Work */
+    .work-grid { grid-template-columns: 1fr; }
+    .work-card { padding: 1.25rem; }
+    .work-icon { width: 36px; height: 36px; font-size: 1rem; margin-bottom: 0.75rem; }
+    .work-title { font-size: 1.05rem; }
 
-    /* Specialisms — 2 columns on mobile */
-    .spec-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5px; }
-    .spec-card { padding: 1.75rem 1.25rem; }
-    .spec-name { font-size: 1rem; }
+    /* Impact */
+    .impact-grid { grid-template-columns: 1fr 1fr; }
+    .impact-card { padding: 1.25rem 1rem; }
+    .impact-num { font-size: 1.9rem; }
 
-    /* Impact section */
-    .impact-grid { grid-template-columns: 1fr !important; gap: 1px !important; }
-    .impact-card { padding: 1.75rem 1.25rem !important; }
+    /* Inbound boxes */
+    #inbound > div { grid-template-columns: 1fr !important; }
+
+    /* Specialisms */
+    .spec-grid { grid-template-columns: repeat(2, 1fr); }
+    .spec-card { padding: 1.25rem 1rem; }
+    .spec-name { font-size: 0.9rem; }
 
     /* Experience */
-    .exp-item {
-      grid-template-columns: 1fr;
-      gap: 0.4rem;
-      padding: 1.75rem 0;
-    }
-    .exp-year { margin-bottom: 0.4rem; }
-    .exp-role { font-size: 1.1rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.25rem; padding: 1.25rem 0; }
+    .exp-dot-col { display: none; }
+    .exp-year { font-size: 0.7rem; margin-bottom: 0.2rem; }
+    .exp-role { font-size: 1rem; }
 
     /* Skills */
-    .skills-container { grid-template-columns: 1fr; gap: 2rem; }
-    .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    .skills-layout { grid-template-columns: 1fr; }
+    .skills-panel { padding: 1.5rem 1.25rem; }
+    .tools-visual { grid-template-columns: repeat(4, 1fr); }
+    .tool-tile { padding: 1rem 0.5rem; }
+    .tool-emoji { font-size: 1.2rem; }
+    .tool-name { font-size: 0.65rem; }
+
+    /* Recommendations */
+    .rec-grid { grid-template-columns: 1fr; }
+    .rec-card { padding: 1.5rem 1.25rem; }
+    .rec-pullquote { font-size: 0.9rem; }
+    .rec-body { font-size: 0.82rem; }
 
     /* Contact */
-    #contact { padding: 4rem 1.25rem; }
-    #contact .section-title { font-size: 2rem; }
-    .contact-links { flex-direction: column; align-items: center; gap: 0.75rem; }
-    .contact-link { width: 100%; justify-content: center; font-size: 0.85rem; padding: 0.9rem 1.25rem; }
-
-    /* Footer */
-    footer { font-size: 0.72rem; padding: 1.5rem 1.25rem; line-height: 1.8; }
+    #contact { padding: 3rem 1.25rem; }
+    #contact .section-title { font-size: 1.75rem; }
+    .contact-links { flex-direction: column; border-radius: 0; width: 100%; }
+    .contact-link { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1); justify-content: center; width: 100%; }
   }
 
   @media (max-width: 400px) {
-    .hero-stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .impact-grid { grid-template-columns: 1fr; }
     .spec-grid { grid-template-columns: 1fr; }
-    .tools-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -439,48 +393,63 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">Anusha S</a>
+  <a class="nav-logo" href="#">Portfolio</a>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
     <li><a href="#impact">Impact</a></li>
     <li><a href="#specialisms">Expertise</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#recommendations">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#work" onclick="closeMenu()">Work</a>
+  <a href="#impact" onclick="closeMenu()">Impact</a>
+  <a href="#specialisms" onclick="closeMenu()">Expertise</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#recommendations" onclick="closeMenu()">Reviews</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow">GTM Content Portfolio</p>
     <h1 class="hero-name">Anusha S</h1>
-    <p class="hero-title">
-      Content Strategist and B2B Marketer specialising in cybersecurity, IT infrastructure, and SaaS GTM. I translate dense technical concepts into content that generates pipeline.
-    </p>
-    <a href="#work" class="hero-cta">View Work →</a>
+    <p class="hero-title">Content Strategist and B2B Marketer specialising in cybersecurity, SaaS GTM, and demand generation. I turn dense technical concepts into content that builds pipeline.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="hero-cta">✉ Connect with Me</a>
+      <a href="Resume.pdf" download class="hero-cta-outline">↓ Download Resume</a>
+    </div>
   </div>
   <div class="hero-right">
     <div class="hero-stat-grid">
       <div class="hero-stat">
         <div class="hero-stat-num">5+</div>
-        <div class="hero-stat-label">Years in B2B SaaS</div>
+        <div class="hero-stat-label">Years B2B SaaS & B2C</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">100+</div>
-        <div class="hero-stat-label">Blog Posts Optimised</div>
+        <div class="hero-stat-label">Posts Optimised</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">3</div>
-        <div class="hero-stat-label">Content Verticals</div>
+        <div class="hero-stat-num">#1</div>
+        <div class="hero-stat-label">Google Rank</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">GTM</div>
-        <div class="hero-stat-label">Aligned Strategy</div>
+        <div class="hero-stat-num">AEO</div>
+        <div class="hero-stat-label">AI Snippet</div>
       </div>
     </div>
     <p class="hero-tagline">"Turning complex security concepts into content that earns trust — and inbound traffic."</p>
   </div>
 </section>
+<div style="height: 4px; background: linear-gradient(to right, var(--tan), var(--accent-light), var(--tan));"></div>
 
 <!-- WORK SAMPLES -->
 <section id="work">
@@ -491,58 +460,65 @@
   <div class="work-grid">
 
     <a class="work-card" href="https://www.securew2.com/blog/scep-vs-dynamic-scep" target="_blank">
+      <div class="work-icon">🔐</div>
       <div class="work-tag">Cybersecurity · Technical Blog</div>
       <div class="work-type">SecureW2 · Long-form</div>
       <h3 class="work-title">SCEP vs. Dynamic SCEP: Securing Certificate Enrollment</h3>
-      <p class="work-desc">A deep-dive comparison of legacy SCEP and Dynamic SCEP protocols, written for IT administrators evaluating certificate-based authentication. Breaks down technical differences into clear GTM messaging.</p>
+      <p class="work-desc">Deep-dive comparison for IT administrators evaluating certificate-based authentication. Breaks down protocol differences into clear GTM messaging.</p>
       <div class="work-achievements">
         <span class="achievement-badge badge-seo">⭐ Ranks #1 on Google</span>
-        <span class="achievement-badge badge-aeo">✦ Featured in Google AI Snippet</span>
+        <span class="achievement-badge badge-aeo">✦ Google AI Snippet</span>
       </div>
-      <span class="work-link-text">Read Article ↗</span>
+      <span class="work-link-text">Read Article →</span>
     </a>
 
     <a class="work-card" href="https://www.securew2.com/blog/what-are-the-risks-of-unclear-pki-ownership" target="_blank">
+      <div class="work-icon">📋</div>
       <div class="work-tag">PKI · Thought Leadership</div>
       <div class="work-type">SecureW2 · Demand Gen</div>
       <h3 class="work-title">What Are the Risks of Unclear PKI Ownership?</h3>
-      <p class="work-desc">An awareness-stage article mapping business risk to technical debt in PKI management. Designed to create urgency and drive inbound leads for SecureW2's Dynamic PKI product.</p>
-      <span class="work-link-text">Read Article ↗</span>
+      <p class="work-desc">Awareness-stage article mapping business risk to technical debt in PKI management — designed to drive inbound leads for SecureW2's Dynamic PKI product.</p>
+      <span class="work-link-text">Read Article →</span>
     </a>
 
     <a class="work-card" href="https://www.instagram.com/p/CfWN_b-L5I5/?igsh=OHFyaGl3bWc3MXlh" target="_blank">
+      <div class="work-icon">📱</div>
       <div class="work-tag">Social Media · Visual Copy</div>
       <div class="work-type">AECC Global · Instagram</div>
       <h3 class="work-title">Study Abroad Campaign — Social Content</h3>
-      <p class="work-desc">Short-form copy and carousel content for a study-abroad brand's B2C Instagram feed, balancing aspirational tone with conversion intent for partner university campaigns.</p>
-      <span class="work-link-text">View Post ↗</span>
+      <p class="work-desc">Carousel copy for a B2C study-abroad brand, balancing aspirational tone with conversion intent for partner university campaigns.</p>
+      <span class="work-link-text">View Post →</span>
     </a>
 
     <a class="work-card" href="https://www.instagram.com/p/Cb6vF9lsuGM/?igsh=MTl6dHR2bndvZXFiNg==" target="_blank">
+      <div class="work-icon">🎓</div>
       <div class="work-tag">Social Media · B2B</div>
       <div class="work-type">AECC Global · Campaign</div>
       <h3 class="work-title">University Partner Campaign — Instagram</h3>
-      <p class="work-desc">Promotional content created to support B2B partner university campaigns, translating institutional messaging into scroll-stopping social copy for organic lead generation.</p>
-      <span class="work-link-text">View Post ↗</span>
+      <p class="work-desc">Promotional content supporting B2B partner university campaigns, translating institutional messaging into scroll-stopping social copy.</p>
+      <span class="work-link-text">View Post →</span>
     </a>
 
     <a class="work-card" href="https://youtu.be/UvBYiYfZMY8?si=fASpAM-Jnft5AApI" target="_blank">
+      <div class="work-icon">🎬</div>
       <div class="work-tag">Video Script · Organic</div>
       <div class="work-type">AECC Global · YouTube</div>
       <h3 class="work-title">YouTube Script — Organic Marketing</h3>
-      <p class="work-desc">Script written for a YouTube channel used in organic marketing and lead generation. Balances educational content with brand narrative for top-of-funnel awareness.</p>
-      <span class="work-link-text">Watch Video ↗</span>
+      <p class="work-desc">Script for a YouTube channel driving organic marketing and lead generation. Balances educational content with brand narrative for top-of-funnel awareness.</p>
+      <span class="work-link-text">Watch Video →</span>
     </a>
 
-    <div class="work-card" style="background:#f8f6f1; border: 1px dashed var(--rule);">
+    <div class="work-card" style="background:#f7f4ef; cursor:default;">
+      <div class="work-icon" style="background:#ede4d8;">📬</div>
       <div class="work-type" style="color:var(--muted);">On Request</div>
       <h3 class="work-title" style="color:var(--muted);">Email Sequences, Case Studies & Sales Collateral</h3>
-      <p class="work-desc">Additional samples available on request: B2B email nurture campaigns, customer case studies, product launch landing page copy, and sales enablement materials for a cybersecurity audience.</p>
-      <span class="work-link-text" style="color:var(--muted); border-color:var(--rule);">Contact for Samples</span>
+      <p class="work-desc">B2B nurture emails, customer case studies, product launch copy, and sales enablement materials for a cybersecurity audience.</p>
+      <span class="work-link-text" style="color:var(--muted);">Contact for Samples →</span>
     </div>
 
   </div>
 </section>
+<div style="height: 4px; background: linear-gradient(to right, var(--tan), var(--accent-light), var(--tan));"></div>
 
 <!-- IMPACT -->
 <section id="impact">
@@ -550,37 +526,72 @@
     <span class="section-num">02 / Impact</span>
     <h2 class="section-title">Results That Matter</h2>
   </div>
-  <p class="impact-intro">Content only counts if it moves the needle. Here's a snapshot of the measurable impact my writing has driven across SEO, inbound, and demand generation.</p>
 
   <div class="impact-grid">
     <div class="impact-card">
+      <div class="impact-icon">🏆</div>
       <div class="impact-num">#1</div>
       <div class="impact-label">Google Ranking</div>
-      <div class="impact-detail">SCEP vs. Dynamic SCEP ranks first organically and is featured in Google's AI-generated answer snippet — driving consistent inbound traffic from high-intent IT buyers.</div>
+      <p class="impact-detail">SCEP vs. Dynamic SCEP ranks first organically and is featured in Google's AI snippet — driving consistent traffic from high-intent IT buyers.</p>
     </div>
     <div class="impact-card">
+      <div class="impact-icon">📈</div>
       <div class="impact-num">100+</div>
       <div class="impact-label">Pages Optimised</div>
-      <div class="impact-detail">Led a full-scale SEO overhaul of SecureW2's blog — restructuring metadata, internal links, and taxonomy across 100+ posts to improve crawlability and organic visibility.</div>
+      <p class="impact-detail">Led a full-scale SEO overhaul of SecureW2's blog — restructuring metadata, internal links, and taxonomy across 100+ posts.</p>
     </div>
     <div class="impact-card">
+      <div class="impact-icon">♻️</div>
       <div class="impact-num">3×</div>
       <div class="impact-label">Content Formats per Asset</div>
-      <div class="impact-detail">Consistently repurposed long-form articles into social carousels, email campaigns, and video scripts — extending content reach across the full funnel with no extra budget.</div>
-    </div>
-  </div>
-
-  <div class="impact-story">
-    <div class="impact-story-card">
-      <div class="impact-story-label">Inbound Lead Generation · SecureW2</div>
-      <p class="impact-story-text">Technical blog content targeting IT administrators and security architects contributed to a steady stream of <strong>qualified inbound leads</strong> for SecureW2's Dynamic PKI and CloudRADIUS products. Articles covering certificate enrollment, PKI ownership risk, and passwordless authentication consistently attracted decision-makers at the evaluation stage, shortening the sales cycle by giving the sales team warm, pre-educated prospects.</p>
-    </div>
-    <div class="impact-story-card">
-      <div class="impact-story-label">Demand Generation · AECC Global</div>
-      <p class="impact-story-text">SEO-optimised landing pages and blog content written for B2B partner university campaigns helped AECC Global attract <strong>prospective students and institutional partners</strong> ahead of key intake seasons. Social media copy and YouTube scripts built top-of-funnel awareness, while targeted landing pages converted organic visitors into enquiries — supporting the sales team's outreach with content-warmed audiences.</p>
+      <p class="impact-detail">Consistently repurposed long-form articles into social, email, and video — extending reach across the full funnel at no extra budget.</p>
     </div>
   </div>
 </section>
+<div style="height: 4px; background: linear-gradient(to right, var(--tan), var(--accent-light), var(--tan));"></div>
+
+<!-- INBOUND LEADS -->
+<section id="inbound" style="background: var(--sand); padding: 2.5rem 4rem 4rem;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+
+    <div style="background: var(--card); border: 1px solid var(--rule); padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--sand); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">🔒</div>
+        <div>
+          <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.15rem;">Inbound Leads · SecureW2</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--ink);">Turning Blogs into Pipeline</div>
+        </div>
+      </div>
+      <p style="font-size: 0.82rem; color: var(--muted); line-height: 1.7;">Technical blog content targeting IT administrators contributed to a steady stream of <strong style="color: var(--ink); font-weight: 600;">qualified inbound leads</strong> for Dynamic PKI and CloudRADIUS — giving the sales team warm, pre-educated prospects.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; padding-top: 0.75rem; border-top: 1px solid var(--rule);">
+        <span style="font-size: 0.72rem; padding: 0.25rem 0.65rem; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted);">PKI Blog Content</span>
+        <span style="font-size: 0.72rem; padding: 0.25rem 0.65rem; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted);">SEO-driven Traffic</span>
+        <span style="font-size: 0.72rem; padding: 0.25rem 0.65rem; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted);">Sales Enablement</span>
+      </div>
+    </div>
+
+    <div style="background: var(--card); border: 1px solid var(--rule); padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--sand); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">🌏</div>
+        <div>
+          <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.15rem;">Demand Generation · AECC Global</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--ink);">Content That Converts Across Borders</div>
+        </div>
+      </div>
+      <p style="font-size: 0.82rem; color: var(--muted); line-height: 1.7;">SEO-optimised landing pages and social content helped attract <strong style="color: var(--ink); font-weight: 600;">prospective students and institutional partners</strong> ahead of key intake seasons, converting organic visitors into enquiries.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; padding-top: 0.75rem; border-top: 1px solid var(--rule);">
+        <span style="font-size: 0.72rem; padding: 0.25rem 0.65rem; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted);">Landing Pages</span>
+        <span style="font-size: 0.72rem; padding: 0.25rem 0.65rem; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted);">Social Campaigns</span>
+        <span style="font-size: 0.72rem; padding: 0.25rem 0.65rem; border: 1px solid var(--rule); border-radius: 20px; color: var(--muted);">B2B Partner Content</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div style="height: 4px; background: linear-gradient(to right, var(--tan), var(--accent-light), var(--tan));"></div>
+
+<!-- SECTION DIVIDER -->
+<div style="height: 4px; background: linear-gradient(to right, var(--tan), var(--accent-light), var(--tan));"></div>
 
 <!-- SPECIALISMS -->
 <section id="specialisms">
@@ -589,28 +600,67 @@
     <h2 class="section-title">What I Do Best</h2>
   </div>
   <div class="spec-grid">
+
     <div class="spec-card">
-      <div class="spec-icon">🔐</div>
-      <div class="spec-name">Cybersecurity & IT Content</div>
-      <p class="spec-desc">Deep familiarity with PKI, RADIUS, SCEP, zero trust, 802.1X, and network authentication. I write for technical buyers and IT decision-makers without losing clarity.</p>
+      <div class="spec-svg">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="#f0e9df"/>
+          <path d="M20 10 L28 15 L28 25 L20 30 L12 25 L12 15 Z" stroke="#a0845c" stroke-width="1.5" fill="none"/>
+          <path d="M20 14 L25 17 L25 23 L20 26 L15 23 L15 17 Z" fill="#c9a97a" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="spec-name">Cybersecurity & IT</div>
+      <p class="spec-desc">PKI, RADIUS, SCEP, zero trust, 802.1X. Writing for technical buyers without losing clarity.</p>
     </div>
+
     <div class="spec-card">
-      <div class="spec-icon">📈</div>
+      <div class="spec-svg">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="#f0e9df"/>
+          <rect x="10" y="26" width="4" height="6" fill="#c9a97a" opacity="0.5"/>
+          <rect x="16" y="20" width="4" height="12" fill="#a0845c" opacity="0.7"/>
+          <rect x="22" y="14" width="4" height="18" fill="#a0845c"/>
+          <rect x="28" y="8" width="4" height="24" fill="#7a6040"/>
+          <polyline points="12,25 18,19 24,13 30,7" stroke="#c9a97a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
       <div class="spec-name">SEO & Organic Growth</div>
-      <p class="spec-desc">Led a 100+ post site overhaul with optimised headlines, internal linking, metadata, and structured taxonomy. Measurable improvements in organic search visibility.</p>
+      <p class="spec-desc">100+ post site overhaul. Measurable improvements in organic visibility and search rankings.</p>
     </div>
+
     <div class="spec-card">
-      <div class="spec-icon">🎯</div>
+      <div class="spec-svg">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="#f0e9df"/>
+          <circle cx="20" cy="20" r="8" stroke="#a0845c" stroke-width="1.5" fill="none"/>
+          <circle cx="20" cy="20" r="3" fill="#c9a97a"/>
+          <line x1="20" y1="9" x2="20" y2="12" stroke="#a0845c" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="29" y1="14" x2="26.5" y2="15.5" stroke="#a0845c" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="29" y1="26" x2="26.5" y2="24.5" stroke="#a0845c" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="20" y1="31" x2="20" y2="28" stroke="#a0845c" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
       <div class="spec-name">GTM-Aligned Messaging</div>
-      <p class="spec-desc">Content mapped to GTM stages — awareness, consideration, decision. I collaborate with product marketing and customer success to ensure brand voice and pipeline impact.</p>
+      <p class="spec-desc">Content mapped to awareness, consideration, and decision stages with clear pipeline impact.</p>
     </div>
+
     <div class="spec-card">
-      <div class="spec-icon">♻️</div>
+      <div class="spec-svg">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="#f0e9df"/>
+          <rect x="9" y="12" width="14" height="10" rx="2" stroke="#a0845c" stroke-width="1.5" fill="none"/>
+          <rect x="17" y="18" width="14" height="10" rx="2" fill="#f0e9df" stroke="#a0845c" stroke-width="1.5"/>
+          <line x1="20" y1="22" x2="28" y2="22" stroke="#c9a97a" stroke-width="1" stroke-linecap="round"/>
+          <line x1="20" y1="25" x2="26" y2="25" stroke="#c9a97a" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
       <div class="spec-name">Content Repurposing</div>
-      <p class="spec-desc">Extending the life of long-form content across social, email, and video formats. Includes YouTube scripts, podcast outlines, Instagram carousels, and email campaigns.</p>
+      <p class="spec-desc">Long-form → social, email, video. Maximum reach and lifecycle value from every asset.</p>
     </div>
+
   </div>
 </section>
+<div style="height: 4px; background: linear-gradient(to right, var(--tan), var(--accent-light), var(--tan));"></div>
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -622,39 +672,41 @@
 
     <div class="exp-item">
       <div class="exp-year">Sep 2022 – Dec 2025</div>
+      <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
       <div>
         <div class="exp-role">Content Writer</div>
         <div class="exp-company">SecureW2, Chennai</div>
         <ul class="exp-bullets">
           <li>Blog articles, case studies, email campaigns, and sales enablement for a cybersecurity audience</li>
-          <li>Led full-scale content overhaul of 100+ blog posts with SEO optimisation</li>
-          <li>Cross-functional collaboration with product marketing, CS, and technical writing teams</li>
-          <li>Competitive content analysis to inform data-driven storytelling strategies</li>
-          <li>CMS publishing, QA checks, and SOP compliance</li>
+          <li>Led full-scale SEO overhaul of 100+ blog posts</li>
+          <li>Cross-functional work with product marketing, CS, and technical writing</li>
+          <li>Competitive content analysis to drive data-led storytelling</li>
         </ul>
       </div>
     </div>
 
     <div class="exp-item">
       <div class="exp-year">Aug 2021 – Sep 2022</div>
+      <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
       <div>
         <div class="exp-role">Junior Web Content Producer</div>
         <div class="exp-company">AECC Global-DIH, Chennai</div>
         <ul class="exp-bullets">
           <li>SEO blogs and landing pages for study abroad brands and B2B partner universities</li>
-          <li>YouTube and podcast scripts for organic marketing and lead generation</li>
-          <li>Social media copy for marketing campaigns prior to website launch</li>
+          <li>YouTube and podcast scripts for organic lead generation</li>
+          <li>Social media copy for campaign and pre-launch activity</li>
         </ul>
       </div>
     </div>
 
     <div class="exp-item">
       <div class="exp-year">Jun 2020 – Aug 2021</div>
+      <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
       <div>
         <div class="exp-role">Freelance Content Writer</div>
         <div class="exp-company">Independent</div>
         <ul class="exp-bullets">
-          <li>Blog posts, marketing copy, and social media content across multiple client verticals</li>
+          <li>Blog posts, marketing copy, and social content across verticals</li>
           <li>Pre-launch content strategy and copywriting support</li>
         </ul>
       </div>
@@ -662,18 +714,20 @@
 
     <div class="exp-item">
       <div class="exp-year">Oct 2013 – Apr 2015</div>
+      <div class="exp-dot-col"><div class="exp-dot"></div></div>
       <div>
         <div class="exp-role">Academic Writer</div>
         <div class="exp-company">Upwork (Elance)</div>
         <ul class="exp-bullets">
-          <li>Subject matter expert in law, management, and tourism for universities in Australia, NZ, USA, and UK</li>
-          <li>Harvard, Chicago, and APA referencing; Master's thesis, assignments, and IRAC writing</li>
+          <li>Subject matter expert in law, management, and tourism for AU, NZ, US, UK universities</li>
+          <li>Harvard, Chicago, and APA referencing</li>
         </ul>
       </div>
     </div>
 
   </div>
 </section>
+<div style="height: 4px; background: linear-gradient(to right, var(--tan), var(--accent-light), var(--tan));"></div>
 
 <!-- SKILLS -->
 <section id="skills">
@@ -681,77 +735,140 @@
     <span class="section-num">05 / Skills & Tools</span>
     <h2 class="section-title">Capabilities</h2>
   </div>
-  <div class="skills-container">
-    <div>
-      <div class="skills-category">
-        <div class="skills-cat-label">Content Types</div>
+  <div class="skills-layout">
+    <div class="skills-panel">
+      <div class="skills-panel-title"><span>✍️</span> Content & Strategy</div>
+      <div class="skill-category">
+        <div class="skill-cat-label">Content Types</div>
         <div class="skill-tags">
-          <span class="skill-tag">Technical Blog Posts</span>
+          <span class="skill-tag">Technical Blogs</span>
           <span class="skill-tag">Case Studies</span>
-          <span class="skill-tag">Landing Page Copy</span>
+          <span class="skill-tag">Landing Pages</span>
           <span class="skill-tag">Email Sequences</span>
           <span class="skill-tag">Sales Collateral</span>
-          <span class="skill-tag">Video & Podcast Scripts</span>
-          <span class="skill-tag">Social Media Copy</span>
+          <span class="skill-tag">Video Scripts</span>
+          <span class="skill-tag">Social Copy</span>
           <span class="skill-tag">Thought Leadership</span>
         </div>
       </div>
-      <div class="skills-category">
-        <div class="skills-cat-label">Domains</div>
+      <div class="skill-category">
+        <div class="skill-cat-label">Domains</div>
         <div class="skill-tags">
           <span class="skill-tag">Cybersecurity</span>
           <span class="skill-tag">IT Infrastructure</span>
           <span class="skill-tag">B2B SaaS</span>
           <span class="skill-tag">Demand Generation</span>
           <span class="skill-tag">Network Security</span>
-          <span class="skill-tag">Study Abroad / EdTech</span>
-          <span class="skill-tag">Legal Writing</span>
+          <span class="skill-tag">EdTech</span>
         </div>
       </div>
-      <div class="skills-category">
-        <div class="skills-cat-label">Competencies</div>
+      <div class="skill-category">
+        <div class="skill-cat-label">Competencies</div>
         <div class="skill-tags">
           <span class="skill-tag">SEO Strategy</span>
           <span class="skill-tag">Content Auditing</span>
           <span class="skill-tag">CMS Management</span>
-          <span class="skill-tag">Content Repurposing</span>
-          <span class="skill-tag">Brand Voice Development</span>
+          <span class="skill-tag">Brand Voice</span>
           <span class="skill-tag">Competitive Analysis</span>
+          <span class="skill-tag">AEO / AI Search</span>
         </div>
       </div>
     </div>
-    <div>
-      <div class="skills-cat-label">Tools</div>
-      <div class="tools-grid">
-        <div class="tool-item">WordPress</div>
-        <div class="tool-item">Yoast SEO</div>
-        <div class="tool-item">Google Suite</div>
-        <div class="tool-item">Canva</div>
-        <div class="tool-item">Grammarly</div>
-        <div class="tool-item">Joomla</div>
-        <div class="tool-item">ChatGPT</div>
-        <div class="tool-item">Loom</div>
+    <div class="skills-panel">
+      <div class="skills-panel-title"><span>🛠️</span> Tools</div>
+      <div class="tools-visual">
+        <div class="tool-tile"><div class="tool-emoji">🌐</div><div class="tool-name">WordPress</div></div>
+        <div class="tool-tile"><div class="tool-emoji">📊</div><div class="tool-name">Yoast SEO</div></div>
+        <div class="tool-tile"><div class="tool-emoji">📁</div><div class="tool-name">Google Suite</div></div>
+        <div class="tool-tile"><div class="tool-emoji">🎨</div><div class="tool-name">Canva</div></div>
+        <div class="tool-tile"><div class="tool-emoji">✅</div><div class="tool-name">Grammarly</div></div>
+        <div class="tool-tile"><div class="tool-emoji">🖥️</div><div class="tool-name">Joomla</div></div>
+        <div class="tool-tile"><div class="tool-emoji">🤖</div><div class="tool-name">ChatGPT</div></div>
+        <div class="tool-tile"><div class="tool-emoji">🎥</div><div class="tool-name">Loom</div></div>
       </div>
     </div>
   </div>
 </section>
+<div style="height: 4px; background: linear-gradient(to right, var(--tan), var(--accent-light), var(--tan));"></div>
+
+<!-- RECOMMENDATIONS -->
+<section id="recommendations">
+  <div class="section-header">
+    <span class="section-num">06 / Recommendations</span>
+    <h2 class="section-title">What Colleagues Say</h2>
+  </div>
+  <div class="rec-grid">
+
+    <div class="rec-card">
+      <div class="rec-header">
+        <div class="rec-avatar rec-avatar-ag">AG</div>
+        <div class="rec-author-info">
+          <div class="rec-name">Amanda Goedde</div>
+          <div class="rec-role">Team Leader · Brand Storyteller · Content Marketer<br>Managed Anusha directly at SecureW2</div>
+        </div>
+        <div class="rec-date-badge">Jan 2026</div>
+      </div>
+      <div class="rec-stars">★★★★★</div>
+      <div class="rec-pullquote">"Anusha's piece on SCEP vs. Dynamic SCEP was the first to show measurable impact in LLM and AI-driven searches — and it remains a top result today."</div>
+      <p class="rec-body">She has a strong instinct for finding the right stories, quickly understanding complex products and technologies, and translating them into clear, high-quality content. A hard worker, and a thoughtful collaborator. Any team would be lucky to have her.</p>
+      <div class="rec-linkedin-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#0a66c2"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        Verified LinkedIn Recommendation
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-header">
+        <div class="rec-avatar rec-avatar-ns">NS</div>
+        <div class="rec-author-info">
+          <div class="rec-name">Neha Singh</div>
+          <div class="rec-role">Product Evangelist</div>
+        </div>
+        <div class="rec-date-badge">Jan 2026</div>
+      </div>
+      <div class="rec-stars">★★★★★</div>
+      <div class="rec-pullquote">"She consistently translated complex concepts into clear, compelling content without losing technical accuracy — her work required minimal revisions."</div>
+      <p class="rec-body">I worked closely with Anusha for over three years on technical product blogs covering PKI, encryption, and RADIUS. She has a strong ability to be persuasive while maintaining brand voice. Creative, adaptable, and highly dedicated — a fantastic addition to any team.</p>
+      <div class="rec-linkedin-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#0a66c2"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        Verified LinkedIn Recommendation
+      </div>
+    </div>
+
+  </div>
+</section>
+<div style="height: 4px; background: linear-gradient(to right, var(--tan), var(--accent-light), var(--tan));"></div>
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header">
-    <span class="section-num">06 / Get in Touch</span>
+    <span class="section-num">07 / Get in Touch</span>
     <h2 class="section-title">Let's Work Together</h2>
   </div>
   <p class="contact-sub">Open to full-time roles, freelance projects, and consulting engagements in B2B content strategy and GTM writing.</p>
   <div class="contact-links">
-    <a class="contact-link" href="mailto:anusha.harish86@gmail.com">✉ anusha.harish86@gmail.com</a>
-    <a class="contact-link" href="tel:+919360028099">📞 +91 93600 28099</a>
-  </div>
+    <a class="contact-link" href="mailto:anusha.harish86@gmail.com">
+      <span class="contact-link-icon">✉</span> anusha.harish86@gmail.com
+    </a>
+    <a class="contact-link" href="tel:+919360028099">
+      <span class="contact-link-icon">📞</span> +91 93600 28099
+    </a>
+    </div>
 </section>
 
+<div style="height: 4px; background: linear-gradient(to right, var(--tan), var(--accent-light), var(--tan));"></div>
+
 <footer>
-  © 2026 Anusha S &nbsp;·&nbsp; Content Strategist & GTM Writer &nbsp;·&nbsp; Chennai, India
+  © 2026 Anusha S  ·  Content Strategist & GTM Writer  ·  Chennai, India
 </footer>
 
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("open");
+  }
+  function closeMenu() {
+    document.getElementById("mobileMenu").classList.remove("open");
+  }
+</script>
 </body>
 </html>
